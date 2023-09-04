@@ -18,6 +18,20 @@ function newSentence(sentence) {
     return newSentence;
 }
 
+function thirdSentence(sentence) {
+    let index = parseInt(sentence.length / 2);
+    let oldSentence = newSentence(sentence);
+    let middleChar = sentence.charAt(index);
+    let originalSentence = middleChar.concat(oldSentence);
+    return originalSentence;
+}
+
+function cipher(sentence) {
+    let existingSentence = thirdSentence(sentence);
+    let cipherMessage = existingSentence.split("").reverse().join("");
+    return cipherMessage;
+}
+
 // User Interface
 const sentence = prompt("Please enter a sentence");
 console.log(newSentence(sentence));
