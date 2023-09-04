@@ -32,7 +32,19 @@ function cipher(sentence) {
     return cipherMessage;
 }
 
-// User Interface
-const sentence = prompt("Please enter a sentence");
-console.log(newSentence(sentence));
+
+$(document).ready(() => {
+    // User Interface
+    const sentence = prompt("Please enter a sentence");
+    const cipherSentence = cipher(sentence);
+
+    $("#original").click(() => {
+        $("#output").html(sentence);
+    });
+
+    $("#cipher").click(() => {
+        $("#output").html(cipherSentence);
+    })
+})
+
 
