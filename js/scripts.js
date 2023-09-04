@@ -6,21 +6,19 @@ function firstNLast(sentence) {
     return firstNLast;
 }
 
-function newSentence(sentence) {
-    const sentence = prompt("Please enter a sentence");
-    const firstAndLast = firstNLast(sentence);
-    return firstAndLast;
-}
-
 function reverseStr(str) {
     const letter = str.split("").reverse().join("");
     return letter;
 }
 
+function newSentence(sentence) {
+    const firstAndLast = firstNLast(sentence);
+    const reverse = reverseStr(firstAndLast);
+    const newSentence = sentence.concat(reverse)
+    return newSentence;
+}
 
 // User Interface
-
-let reverse = reverseStr(firstAndLast)
-
-console.log(reverse);
+const sentence = prompt("Please enter a sentence");
+console.log(newSentence(sentence));
 
