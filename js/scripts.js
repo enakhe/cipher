@@ -28,7 +28,7 @@ function thirdSentence(sentence) {
 
 function cipher(sentence) {
     let existingSentence = thirdSentence(sentence);
-    let cipherMessage = existingSentence.split("").reverse().join("");
+    let cipherMessage = reverseStr(existingSentence);
     return cipherMessage;
 }
 
